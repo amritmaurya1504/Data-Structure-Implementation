@@ -89,6 +89,8 @@ class DoublyLinkedList {
 
     public void deleteAtGivenIndex(int index){
 
+        getLength();
+
         if (index == 0){
             deleteFirst();
         }else if(index == length-1){
@@ -108,7 +110,18 @@ class DoublyLinkedList {
     }
 
     public void reverse(){
-        
+        Node currNode =head;
+        Node nextNode = null;
+
+        while (currNode != null){
+        nextNode = currNode.next;
+        currNode.next = currNode.prev;
+        currNode.prev = nextNode;
+        currNode = nextNode;
+        }
+        currNode = head;
+        head = tail;
+        tail = currNode;
     }
 
 
@@ -148,6 +161,8 @@ public class Runner {
 //       dl1.deleteFirst();
 //       dl1.deleteEnd();
         dl1.deleteAtGivenIndex(3);
+       dl1.show();
+       dl1.reverse();
        dl1.show();
 
         System.out.println("Length of List : " + dl1.getLength());
