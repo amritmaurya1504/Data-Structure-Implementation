@@ -5,21 +5,19 @@ class StackArray{
     int top = -1;
 
     public void push(int data){
-        if(top == 4){
-            System.out.println("Overflow");
+        if(top == 4) {
+            System.out.println("OverFlow");
         }else{
             top++;
             stack[top] = data;
         }
     }
     public void pop(){
-        int items;
-        if(top == -1){
-            System.out.println("UnderFlow");
+        if(top == -1) {
+            System.out.println("Underflow");
         }else{
-            items = stack[top];
+            int item = stack[top];
             top--;
-//            System.out.println(items);
         }
     }
 
@@ -40,13 +38,13 @@ class StackArray{
 public class StackUsingArray {
     public static void main(String[] args) {
         StackArray stA = new StackArray();
-        stA.push(23);
         stA.push(12);
-        stA.push(32);
-        stA.push(3);
-        stA.push(31);
+        stA.push(20);
+        stA.push(22);
+        stA.push(2222);
         stA.display();
-//        stA.pop();
+        stA.pop();
+        System.out.println("New Stack....");
         stA.display();
         stA.peek();
     }

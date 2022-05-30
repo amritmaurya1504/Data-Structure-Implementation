@@ -160,8 +160,8 @@ public class Runner {
 //        l1.deleteAtEnd();
 //        l1.deleteWithGivenValue(14);
         l1.show();
-        System.out.println("Total element in LinkedList are : " + l1.getLength());
-        l1.reverse();
-        l1.show();
+        // System.out.println("Total element in LinkedList are : " + l1.getLength());
+        // l1.reverse();
+        // l1.show();
     }
 }

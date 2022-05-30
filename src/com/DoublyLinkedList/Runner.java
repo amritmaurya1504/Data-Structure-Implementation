@@ -1,28 +1,29 @@
 package com.DoublyLinkedList;
 
 
+
 class Node {
     int data;
-    Node next , prev;
+    Node prev, next;
 }
 
 class DoublyLinkedList {
     Node head , tail;
-    int length=0;
 
-    public void insert(int data){
-        Node node = new Node();
-        node.next = null;
-        node.prev = null;
-        node.data = data;
-        if(head == null){
-            head = tail = node;
-        }else{
-            tail.next = node;
-            node.prev = tail;
-            tail = node;
-        }
-    }
+
+   public void insert(int data){
+       Node node = new Node();
+       node.next = null;
+       node.prev = null;
+       node.data = data;
+       if(head == null){
+           head = tail = node;
+       }else{
+           tail.next = node;
+           node.prev = tail;
+           tail = node;
+       }
+   }
 
     public void insertAtStart(int data){
         Node node = new Node();
@@ -87,27 +88,27 @@ class DoublyLinkedList {
         }
     }
 
-    public void deleteAtGivenIndex(int index){
-
-        getLength();
-
-        if (index == 0){
-            deleteFirst();
-        }else if(index == length-1){
-            deleteEnd();
-        }else{
-            Node temp = head;
-            Node p = null;
-            int i = 0;
-            while (i < index -1){
-                temp = temp.next;
-                i++;
-            }
-            p = temp.next;
-            temp.next = p.next;
-            p.next.prev = temp;
-        }
-    }
+//    public void deleteAtGivenIndex(int index){
+//
+//        getLength();
+//
+//        if (index == 0){
+//            deleteFirst();
+//        }else if(index == length-1){
+//            deleteEnd();
+//        }else{
+//            Node temp = head;
+//            Node p = null;
+//            int i = 0;
+//            while (i < index -1){
+//                temp = temp.next;
+//                i++;
+//            }
+//            p = temp.next;
+//            temp.next = p.next;
+//            p.next.prev = temp;
+//        }
+//    }
 
     public void reverse(){
         Node currNode =head;
@@ -125,14 +126,14 @@ class DoublyLinkedList {
     }
 
 
-    public int getLength(){
-        Node n = head;
-        while (n != null){
-            n = n.next;
-            length++;
-        }
-        return  length;
-    }
+//    public int getLength(){
+//        Node n = head;
+//        while (n != null){
+//            n = n.next;
+//            length++;
+//        }
+//        return  length;
+//    }
 
     public void show(){
         Node n = head;
@@ -152,19 +153,19 @@ public class Runner {
        dl1.insert(10);
        dl1.insert(11);
        dl1.insert(12);
-       dl1.insert(13);
-       dl1.insertAtStart(9);
-       dl1.insertAtEnd(14);
-       dl1.insertAtEnd(20);
-//       dl1.insertAtIndex(3,25);
-       dl1.insertAtIndex(3,24);
-//       dl1.deleteFirst();
-//       dl1.deleteEnd();
-        dl1.deleteAtGivenIndex(3);
-       dl1.show();
-       dl1.reverse();
+//       dl1.insert(13);
+//       dl1.insertAtStart(9);
+//       dl1.insertAtEnd(14);
+//       dl1.insertAtEnd(20);
+////       dl1.insertAtIndex(3,25);
+//       dl1.insertAtIndex(3,24);
+////       dl1.deleteFirst();
+////       dl1.deleteEnd();
+////        dl1.deleteAtGivenIndex(3);
+//       dl1.show();
+//       dl1.reverse();
        dl1.show();
 
-        System.out.println("Length of List : " + dl1.getLength());
+//        System.out.println("Length of List : " + dl1.getLength());
     }
 }
