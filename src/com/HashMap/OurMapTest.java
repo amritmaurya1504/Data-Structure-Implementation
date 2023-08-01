@@ -1,7 +1,10 @@
 package com.HashMap;
 
+import java.util.HashMap;
+
 public class OurMapTest {
     public static void main(String[] args) {
+        HashMap<Integer, String> m = new HashMap<>();
         OurMap<Integer, String> map = new OurMap<>();
         map.put(4,"Patna");
         map.put(3, "Jehanabad");
